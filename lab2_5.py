@@ -10,6 +10,6 @@ init()
 print(Fore.GREEN)
 text = input("Write your text:")
 print(text)
-pattern = r'[A-Z]\D+\d{2,4}'
+pattern = re.compile(r'\b([A-Z][a-z]*\d{2}|[A-Z][a-z]*\d{4})\b')
 result = re.findall(pattern,text)
 print(Fore.RED,result)
